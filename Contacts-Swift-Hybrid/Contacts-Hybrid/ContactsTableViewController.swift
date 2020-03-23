@@ -8,12 +8,17 @@
 
 import UIKit
 
-
+// Swift (model) -> Objective C (model conroller) -> Swift (table view)
 class ContactsTableViewController: UITableViewController {
 	
+    
+    let contatcsController = LSIContactController()
+    
+    
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+        tableView.reloadData()
 		
 	}
 	
@@ -22,13 +27,17 @@ class ContactsTableViewController: UITableViewController {
 	
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // TODO: Implement controller count
-		return 0
+        return contatcsController.contacts.count
 	}
 	
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "ContactCell", for: indexPath)
         
         // TODO: Implement display logic
+        guard let contact = contatcsController.contacts[indexPath.row] as? Contact else {return cell}
+        
+        cell.textLabel?.text = contact.name
+        cell.detailTextLabel?.text = contact.relationship
 		
 		return cell
 	}

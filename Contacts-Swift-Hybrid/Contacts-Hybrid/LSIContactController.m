@@ -8,6 +8,9 @@
 
 #import "LSIContactController.h"
 
+// "Project_Name-swift.h"
+#import "Contacts_Hybrid-Swift.h"
+
 @interface LSIContactController ()
 
 @property (nonatomic)NSMutableArray *innerContatcs;
@@ -19,7 +22,7 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-     
+        [self addTestData];
     }
     return self;
 }
@@ -40,8 +43,11 @@
 // 3. Test data
 - (void)addTestData {
     
+    // import the swift header
     [self.innerContatcs addObjectsFromArray:@[
         
+        [[Contact alloc] initWithName:@"Austin Potts" relationship:@"Myself"],
+        [[Contact alloc] initWithName:@"Joe Bill" relationship:@"Dog"],
         
     ]];
     
