@@ -9,11 +9,15 @@
 #import <Foundation/Foundation.h>
 
 
+// forward class declaration
+
+// Only import the auot-generated Swift handler in .m files
+@class Contact;
 
 @interface LSIContactController : NSObject
 
 
-@property (nonatomic,readonly,copy) NSArray *contacts;
+@property (nonatomic,readonly,copy,nonnull) NSArray<Contact *> *contacts;
 
 @end
 

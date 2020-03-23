@@ -34,7 +34,7 @@ class ContactsTableViewController: UITableViewController {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "ContactCell", for: indexPath)
         
         // TODO: Implement display logic
-        guard let contact = contatcsController.contacts[indexPath.row] as? Contact else {return cell}
+         let contact = contatcsController.contacts[indexPath.row]
         
         cell.textLabel?.text = contact.name
         cell.detailTextLabel?.text = contact.relationship
