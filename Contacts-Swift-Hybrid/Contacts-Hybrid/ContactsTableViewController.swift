@@ -12,7 +12,7 @@ import UIKit
 class ContactsTableViewController: UITableViewController {
 	
     
-    let contatcsController = LSIContactController()
+    let contatcsController = ContactController()
     
     
 	override func viewDidLoad() {
